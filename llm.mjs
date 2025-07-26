@@ -87,7 +87,7 @@ const question = `次のニュースタイトルを「社会的な重要性」�
 
 const llmFetch = async content => {
   const res = await fetch(
-    'http://a.jsx.jp:8080/v1/chat/completions', {
+    'https://llama.x.jsx.jp/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(content),
@@ -105,7 +105,7 @@ const main = async () => {
       ],
       "temperature": 0.6,
       "max_tokens": 128
-    });
+    }).catch(e => logger.warn(e));
     logger.info({
       q: title,
       a: result.choices[0].message.content,
