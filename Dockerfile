@@ -24,15 +24,18 @@ RUN cmake .. \
 
 FROM node:lts-bookworm-slim
 
-RUN apt-get update && apt-get install -y curl \
+RUN apt-get update && apt-get install -y curl libgomp1 \
 && apt-get clean
 
 USER node
-WORKDIR /home/node
+WORKDIR /home/node/llama.cpp
 
 COPY --from=build /home/node/llama.cpp/build/bin bin
 COPY --chmod=go+rX js js
 
-CMD bash
+ENV LD_LIBRARY_PATH="bin"
+EXPOSE 8080
+CMD ["js/cmd.sh"]
+
 # llama.cpp base container
 # - ghcr.io/jobscale/llama.cpp
