@@ -1,4 +1,4 @@
-FROM node:lts-bookworm-slim
+FROM node:lts-bookworm-slim AS build
 SHELL ["bash", "-c"]
 
 RUN apt-get update && apt-get install -y build-essential curl git cmake \
@@ -22,12 +22,17 @@ RUN cmake .. \
   -DCMAKE_BUILD_TYPE=Release \
 && cmake --build . --config Release
 
+FROM node:lts-bookworm-slim
+
+RUN apt-get update && apt-get install -y curl \
+&& apt-get clean
+
+USER node
+WORKDIR /home/node
+
+COPY --from=build /home/node/llama.cpp/build/bin bin
 COPY --chmod=go+rX js js
 
-ENV URI=https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main
-ENV FILE=gemma-3-4b-it-Q4_K_M.gguf
-RUN curl -L -o "$FILE" -H "Authorization: Bearer $(node js)" "$URI/$FILE?download=true"
-
-EXPOSE 8080
-
-CMD bash -euc "bin/llama-server --model \$FILE --host 0.0.0.0"
+CMD bash
+# llama.cpp base container
+# - ghcr.io/jobscale/llama.cpp
