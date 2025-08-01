@@ -33,9 +33,15 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
-          - name: phi-4
-            irregular: 'phi-4'
-            docker_file: phi-4/Dockerfile
+          - name: Phi-4
+            irregular: 'Phi-4'
+            docker_file: Phi-4/Dockerfile
+          - name: ELYZA
+            irregular: 'ELYZA'
+            docker_file: ELYZA/Dockerfile
+          - name: calm2
+            irregular: 'calm2'
+            docker_file: calm2/Dockerfile
     permissions:
       contents: read
       packages: write
