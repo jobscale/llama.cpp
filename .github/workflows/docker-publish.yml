@@ -33,7 +33,9 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
-
+          - name: phi-4
+            irregular: 'phi-4'
+            docker_file: phi-4/Dockerfile
     permissions:
       contents: read
       packages: write

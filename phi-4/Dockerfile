@@ -24,8 +24,8 @@ RUN cmake .. \
 
 COPY --chmod=go+rX js js
 
-ENV URI=https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main
-ENV FILE=gemma-3-4b-it-Q4_K_M.gguf
+ENV URI=https://huggingface.co/lmstudio-community/Phi-4-mini-reasoning-GGUF/resolve/main
+ENV FILE=Phi-4-mini-reasoning-Q4_K_M.gguf
 RUN curl -L -o "$FILE" -H "Authorization: Bearer $(node js)" "$URI/$FILE?download=true"
 
 EXPOSE 8080
