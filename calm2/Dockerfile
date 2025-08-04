@@ -6,7 +6,7 @@ FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 # モデルはキャッシュを利用する
 FROM node:22.17.1-bookworm-slim
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  curl libgomp1 \
+  ca-certificates curl libgomp1 \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/node/llama.cpp
