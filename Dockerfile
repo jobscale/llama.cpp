@@ -25,7 +25,7 @@ RUN cmake .. \
 FROM node:lts-bookworm-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  curl libgomp1 \
+  curl git vim libgomp1 \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER node
