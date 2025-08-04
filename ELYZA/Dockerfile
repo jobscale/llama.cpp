@@ -1,5 +1,16 @@
+ARG URI=https://huggingface.co/QuantFactory/Llama-3-ELYZA-JP-8B-GGUF/resolve/main
+ARG FILE=Llama-3-ELYZA-JP-8B.Q4_K_M.gguf
+
+FROM node:lts-bookworm-slim AS content
+WORKDIR /home/node
+USER node
+ARG URI
+ARG FILE
+RUN curl -L -o "$FILE" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
+
 FROM ghcr.io/jobscale/llama.cpp
 
-ENV URI=https://huggingface.co/QuantFactory/Llama-3-ELYZA-JP-8B-GGUF/resolve/main
-ENV FILE=Llama-3-ELYZA-JP-8B.Q4_K_M.gguf
-RUN curl -L -o "$FILE" -H "Authorization: Bearer $(node js)" "$URI/$FILE?download=true"
+ARG FILE
+COPY --from=content /home/node/${FILE} .
+
+ENV FILE=${FILE}
