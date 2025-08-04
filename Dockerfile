@@ -31,7 +31,6 @@ USER node
 WORKDIR /home/node/llama.cpp
 
 COPY --from=build /home/node/llama.cpp/build/bin bin
-COPY --chmod=go+rX js js
 
 ENV LD_LIBRARY_PATH="bin"
 EXPOSE 8080
