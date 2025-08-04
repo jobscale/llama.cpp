@@ -36,6 +36,3 @@ COPY --from=build /home/node/llama.cpp/build/bin bin
 ENV LD_LIBRARY_PATH="bin"
 EXPOSE 8080
 CMD ["js/cmd.sh"]
-
-# llama.cpp base container
-# - ghcr.io/jobscale/llama.cpp
