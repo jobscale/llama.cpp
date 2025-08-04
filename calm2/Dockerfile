@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/node/llama.cpp
+RUN chown -R node:staff .
 USER node
 COPY --chmod=go+rX js js
 ARG URI
