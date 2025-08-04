@@ -8,7 +8,7 @@ WORKDIR /home/node
 USER node
 ARG URI
 ARG FILE
-RUN curl -L -o "$FILE" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
+RUN curl -L -o "${FILE}" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
 
 FROM ghcr.io/jobscale/llama.cpp
 
