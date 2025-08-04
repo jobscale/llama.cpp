@@ -1,7 +1,7 @@
 FROM node:lts-bookworm-slim AS build
 SHELL ["bash", "-c"]
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y \
   build-essential curl git cmake \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -25,7 +25,8 @@ RUN cmake .. \
 
 FROM node:lts-bookworm-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl libgomp1 \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  curl libgomp1 \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER node
