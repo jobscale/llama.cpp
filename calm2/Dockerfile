@@ -2,6 +2,8 @@ ARG URI=https://huggingface.co/TheBloke/calm2-7B-chat-GGUF/resolve/main
 ARG FILE=calm2-7b-chat.Q4_K_M.gguf
 
 FROM node:lts-bookworm-slim AS content
+RUN apt-get update && apt-get install -y curl \
+&& apt-get clean
 WORKDIR /home/node
 USER node
 ARG URI

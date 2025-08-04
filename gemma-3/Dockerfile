@@ -2,6 +2,8 @@ ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main
 ARG FILE=gemma-3-4b-it-Q4_K_M.gguf
 
 FROM node:lts-bookworm-slim AS content
+RUN apt-get update && apt-get install -y curl \
+&& apt-get clean
 WORKDIR /home/node
 USER node
 ARG URI
