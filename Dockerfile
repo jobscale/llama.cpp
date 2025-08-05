@@ -32,7 +32,8 @@ USER node
 WORKDIR /home/node/llama.cpp
 
 COPY --from=build /home/node/llama.cpp/build/bin bin
+COPY js/cmd.sh .
 
 ENV LD_LIBRARY_PATH="bin"
 EXPOSE 8080
-CMD ["js/cmd.sh"]
+CMD ["./cmd.sh"]
