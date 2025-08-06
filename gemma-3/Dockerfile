@@ -2,6 +2,7 @@ ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main
 ARG FILE=gemma-3-4b-it-Q4_K_M.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
+COPY version llama.cpp-version
 
 # モデルはキャッシュを利用する
 FROM node:22.17.1-bookworm-slim
@@ -17,8 +18,6 @@ ARG URI
 ARG FILE
 RUN curl -sSLo "${FILE}" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
 
-COPY --from=llama.cpp /home/node/llama.cpp/cmd.sh .
-RUN mv cmd.sh $(date -Iseconds)
 COPY --from=llama.cpp /home/node/llama.cpp/bin bin
 
 ENV FILE=${FILE}

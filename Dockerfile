@@ -12,6 +12,7 @@ RUN git clone --depth 1 https://github.com/ggerganov/llama.cpp.git \
 
 WORKDIR /home/node/llama.cpp/build
 
+COPY version .
 RUN cmake .. \
   -DLLAMA_CURL=OFF \
   -DLLAMA_CUBLAS=OFF \
@@ -31,6 +32,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 USER node
 WORKDIR /home/node/llama.cpp
 
+COPY --from=build /home/node/llama.cpp/build/version .
 COPY --from=build /home/node/llama.cpp/build/bin bin
 COPY js/cmd.sh .
 

@@ -2,6 +2,7 @@ ARG URI=https://huggingface.co/QuantFactory/Llama-3-ELYZA-JP-8B-GGUF/resolve/mai
 ARG FILE=Llama-3-ELYZA-JP-8B.Q4_K_M.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
+COPY version llama.cpp-version
 
 # モデルはキャッシュを利用する
 FROM node:22.17.1-bookworm-slim
@@ -16,6 +17,7 @@ COPY --chmod=go+rX js js
 ARG URI
 ARG FILE
 RUN curl -sSLo "${FILE}" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
+
 COPY --from=llama.cpp /home/node/llama.cpp/bin bin
 
 ENV FILE=${FILE}
