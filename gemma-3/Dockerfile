@@ -16,6 +16,9 @@ COPY --chmod=go+rX js js
 ARG URI
 ARG FILE
 RUN curl -sSLo "${FILE}" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
+
+COPY /home/node/llama.cpp/cmd.sh .
+RUN mv cmd.sh $(date -Iseconds)
 COPY --from=llama.cpp /home/node/llama.cpp/bin bin
 
 ENV FILE=${FILE}
