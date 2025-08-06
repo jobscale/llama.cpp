@@ -37,19 +37,15 @@ jobs:
           - name: gemma-3
             irregular: 'gemma-3'
             docker_file: gemma-3/Dockerfile
-            delay: 1
           - name: Phi-4
             irregular: 'Phi-4'
             docker_file: Phi-4/Dockerfile
-            delay: 2
           - name: ELYZA
             irregular: 'ELYZA'
             docker_file: ELYZA/Dockerfile
-            delay: 3
           - name: calm2
             irregular: 'calm2'
             docker_file: calm2/Dockerfile
-            delay: 4
     permissions:
       contents: read
       packages: write
@@ -79,13 +75,6 @@ jobs:
 
       - name: Set Custom Environment ${{ matrix.name }}
         run: |
-          if [[ -n "${{ matrix.delay }}" ]]; then
-            for i in $(seq "${{ matrix.delay }}" -1 1); do
-              echo "wait left $i min"
-              sleep 60
-            done
-          fi
-
           if [[ -n "${{ matrix.irregular }}" ]]; then
             SUFFIX="-${{ matrix.irregular }}"
             GH_DEFAULT=${{ matrix.irregular }}
