@@ -40,15 +40,15 @@ jobs:
           - name: gemma-3
             irregular: 'gemma-3'
             docker_file: gemma-3/Dockerfile
+          - name: gemma-3n
+            irregular: 'gemma-3n'
+            docker_file: gemma-3n/Dockerfile
           - name: Phi-4
             irregular: 'Phi-4'
             docker_file: Phi-4/Dockerfile
           - name: ELYZA
             irregular: 'ELYZA'
             docker_file: ELYZA/Dockerfile
-          - name: calm2
-            irregular: 'calm2'
-            docker_file: calm2/Dockerfile
     permissions:
       contents: read
       packages: write
