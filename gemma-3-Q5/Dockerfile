@@ -1,15 +1,11 @@
-# ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main
-# ARG FILE=gemma-3-4b-it-Q4_K_M.gguf
-# ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-qat-GGUF/resolve/main
-# ARG FILE=gemma-3-4b-it-qat-Q4_K_M.gguf
-ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-qat-int4-GGUF/resolve/main
-ARG FILE=gemma-3-4b-it-qat-int4-Q4_K_M.gguf
+ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-qat-GGUF/resolve/main
+ARG FILE=gemma-3-4b-it-qat-Q5_K_M.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
 
 # モデルはキャッシュを利用する
-FROM node:22.17.1-bookworm-slim
+FROM node:lts-bookworm-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates curl libgomp1 \

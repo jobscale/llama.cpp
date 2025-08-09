@@ -5,7 +5,7 @@ FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
 
 # モデルはキャッシュを利用する
-FROM node:22.17.1-bookworm-slim
+FROM node:lts-bookworm-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates curl libgomp1 \
