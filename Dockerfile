@@ -2,7 +2,7 @@ FROM node:lts-bookworm-slim AS build
 SHELL ["bash", "-c"]
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y build-essential curl git cmake \
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential curl git cmake \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER node
