@@ -34,15 +34,18 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
-          - name: gemma-3-Q5
-            irregular: 'gemma-3-Q5'
-            docker_file: gemma-3-Q5/Dockerfile
-          - name: gemma-3
-            irregular: 'gemma-3'
-            docker_file: gemma-3/Dockerfile
           - name: gemma-3n
             irregular: 'gemma-3n'
             docker_file: gemma-3n/Dockerfile
+          - name: gemma-3n-Q4
+            irregular: 'gemma-3n-Q4'
+            docker_file: gemma-3n-Q4/Dockerfile
+          - name: gemma-3
+            irregular: 'gemma-3'
+            docker_file: gemma-3/Dockerfile
+          - name: gemma-3-Q5
+            irregular: 'gemma-3-Q5'
+            docker_file: gemma-3-Q5/Dockerfile
           - name: Phi-4
             irregular: 'Phi-4'
             docker_file: Phi-4/Dockerfile
