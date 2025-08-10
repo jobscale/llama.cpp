@@ -1,3 +1,5 @@
+# ARG URI=https://huggingface.co/unsloth/gemma-3n-E4B-it-GGUF/resolve/main
+# ARG FILE=gemma-3n-E4B-it-Q5_K_M.gguf
 ARG URI=https://huggingface.co/Mungert/gemma-3n-E4B-it-GGUF/resolve/main
 ARG FILE=gemma-3n-E4B-it-q5_k_m.gguf
 

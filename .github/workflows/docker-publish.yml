@@ -49,9 +49,9 @@ jobs:
           - name: Phi-4
             irregular: 'Phi-4'
             docker_file: Phi-4/Dockerfile
-          - name: ELYZA
-            irregular: 'ELYZA'
-            docker_file: ELYZA/Dockerfile
+          - name: Llama-3
+            irregular: 'Llama-3'
+            docker_file: Llama-3/Dockerfile
     permissions:
       contents: read
       packages: write
