@@ -1,11 +1,11 @@
 ARG URI=https://huggingface.co/lmstudio-community/Phi-4-mini-reasoning-GGUF/resolve/main
-ARG FILE=Phi-4-mini-reasoning-Q4_K_M.gguf
+ARG FILE=Phi-4-mini-reasoning-Q5_K_M.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
 
 # モデルはキャッシュを利用する
-FROM node:lts-bookworm-slim
+FROM node:22.17.1-bookworm-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates curl libgomp1 \
