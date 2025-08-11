@@ -1,4 +1,4 @@
-ARG URI=https://huggingface.co/QuantFactory/Llama-3-ELYZA-JP-8B-GGUF/resolve/main
+ARG URI=https://huggingface.co/QuantFactory/Llama-3-ELYZA-JP-8B-GGUF
 ARG FILE=Llama-3-ELYZA-JP-8B.Q5_K_M.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
@@ -17,7 +17,8 @@ USER node
 COPY --chmod=go+rX js js
 ARG URI
 ARG FILE
-RUN curl -sSLo "${FILE}" -H "Authorization: Bearer $(node js)" "${URI}/${FILE}?download=true"
+RUN curl -sSLo "${FILE}" -H "Authorization: Bearer $(node js)" \
+  "${URI}/resolve/main/${FILE}?download=true"
 
 COPY --from=llama.cpp /home/node/llama.cpp/bin bin
 
