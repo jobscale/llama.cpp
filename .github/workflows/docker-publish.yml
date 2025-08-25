@@ -34,18 +34,18 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
-          - name: gemma-7B-Q8
-            irregular: 'gemma-7B-Q8'
-            docker_file: gemma-7B-Q8/Dockerfile
-          - name: gemma-7B-Q6
-            irregular: 'gemma-7B-Q6'
-            docker_file: gemma-7B-Q6/Dockerfile
-          - name: gemma-7B-Q5
-            irregular: 'gemma-7B-Q5'
-            docker_file: gemma-7B-Q5/Dockerfile
-          - name: gemma-7B-Q4
-            irregular: 'gemma-7B-Q4'
-            docker_file: gemma-7B-Q4/Dockerfile
+          - name: gemma-3-270m-Q2
+            irregular: 'gemma-3-270m-Q2'
+            docker_file: gemma-3-270m-Q2/Dockerfile
+          - name: gemma-3-270m-Q8
+            irregular: 'gemma-3-270m-Q8'
+            docker_file: gemma-3-270m-Q8/Dockerfile
+          - name: gemma-3-270m-Q6
+            irregular: 'gemma-3-270m-Q6'
+            docker_file: gemma-3-270m-Q6/Dockerfile
+          - name: gemma-3-270m-Q5
+            irregular: 'gemma-3-270m-Q5'
+            docker_file: gemma-3-270m-Q5/Dockerfile
           - name: gemma-3n-E4B-Q8
             irregular: 'gemma-3n-E4B-Q8'
             docker_file: gemma-3n-E4B-Q8/Dockerfile
@@ -55,9 +55,6 @@ jobs:
           - name: gemma-3n-E4B-Q5
             irregular: 'gemma-3n-E4B-Q5'
             docker_file: gemma-3n-E4B-Q5/Dockerfile
-          - name: gemma-3n-E4B-Q4
-            irregular: 'gemma-3n-E4B-Q4'
-            docker_file: gemma-3n-E4B-Q4/Dockerfile
           - name: gemma-3n-E2B-Q8
             irregular: 'gemma-3n-E2B-Q8'
             docker_file: gemma-3n-E2B-Q8/Dockerfile
@@ -67,9 +64,6 @@ jobs:
           - name: gemma-3n-E2B-Q5
             irregular: 'gemma-3n-E2B-Q5'
             docker_file: gemma-3n-E2B-Q5/Dockerfile
-          - name: gemma-3n-E2B-Q4
-            irregular: 'gemma-3n-E2B-Q4'
-            docker_file: gemma-3n-E2B-Q4/Dockerfile
           - name: Phi-4
             irregular: 'Phi-4'
             docker_file: Phi-4/Dockerfile

@@ -1,5 +1,5 @@
-ARG URI=https://huggingface.co/unsloth/gemma-3n-E2B-it-GGUF
-ARG FILE=gemma-3n-E2B-it-Q4_K_M.gguf
+ARG URI=https://huggingface.co/gguf-org/gemma-3-270m-gguf
+ARG FILE=gemma-3-270m-q2_k_s.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
