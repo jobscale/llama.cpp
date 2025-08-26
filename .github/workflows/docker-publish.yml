@@ -34,6 +34,15 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
+          - name: InternVL3-2B-Q8
+            irregular: 'InternVL3-2B-Q8'
+            docker_file: InternVL3-2B-Q8/Dockerfile
+          - name: InternVL3-2B-Q6
+            irregular: 'InternVL3-2B-Q6'
+            docker_file: InternVL3-2B-Q6/Dockerfile
+          - name: InternVL3-2B-Q5
+            irregular: 'InternVL3-2B-Q5'
+            docker_file: InternVL3-2B-Q5/Dockerfile
           - name: gemma-3-1B-Q8
             irregular: 'gemma-3-1B-Q8'
             docker_file: gemma-3-1B-Q8/Dockerfile
