@@ -34,6 +34,15 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
+          - name: Falcon-H1-3B-Q8
+            irregular: 'Falcon-H1-3B-Q8'
+            docker_file: Falcon-H1-3B-Q8/Dockerfile
+          - name: Falcon-H1-3B-Q6
+            irregular: 'Falcon-H1-3B-Q6'
+            docker_file: Falcon-H1-3B-Q6/Dockerfile
+          - name: Falcon-H1-3B-Q5
+            irregular: 'Falcon-H1-3B-Q5'
+            docker_file: Falcon-H1-3B-Q5/Dockerfile
           - name: InternVL3-2B-Q8
             irregular: 'InternVL3-2B-Q8'
             docker_file: InternVL3-2B-Q8/Dockerfile
@@ -82,12 +91,6 @@ jobs:
           - name: gemma-3-270m-Q5
             irregular: 'gemma-3-270m-Q5'
             docker_file: gemma-3-270m-Q5/Dockerfile
-          - name: Phi-4
-            irregular: 'Phi-4'
-            docker_file: Phi-4/Dockerfile
-          - name: Llama-3
-            irregular: 'Llama-3'
-            docker_file: Llama-3/Dockerfile
     permissions:
       contents: read
       packages: write

@@ -1,5 +1,5 @@
-ARG URI=https://huggingface.co/lmstudio-community/Phi-4-mini-reasoning-GGUF
-ARG FILE=Phi-4-mini-reasoning-Q5_K_M.gguf
+ARG URI=https://huggingface.co/unsloth/Falcon-H1-3B-Instruct-GGUF
+ARG FILE=Falcon-H1-3B-Instruct-UD-Q6_K_XL.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version

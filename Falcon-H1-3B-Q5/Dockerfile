@@ -1,5 +1,5 @@
-ARG URI=https://huggingface.co/QuantFactory/Llama-3-ELYZA-JP-8B-GGUF
-ARG FILE=Llama-3-ELYZA-JP-8B.Q5_K_M.gguf
+ARG URI=https://huggingface.co/unsloth/Falcon-H1-3B-Instruct-GGUF
+ARG FILE=Falcon-H1-3B-Instruct-UD-Q5_K_XL.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
