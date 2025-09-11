@@ -34,6 +34,9 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
+          - name: gpt-oss-20b-Q4
+            irregular: 'gpt-oss-20b-Q4'
+            docker_file: gpt-oss-20b-Q4/Dockerfile
           - name: gemma-3-12b-Q3
             irregular: 'gemma-3-12b-Q3'
             docker_file: gemma-3-12b-Q3/Dockerfile
