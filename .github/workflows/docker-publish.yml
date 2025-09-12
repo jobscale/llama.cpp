@@ -34,6 +34,9 @@ jobs:
           - name: regular
             irregular: ''
             docker_file: Dockerfile
+          - name: Qwen3-4B-Thinking-2507-Q4
+            irregular: 'Qwen3-4B-Thinking-2507-Q4'
+            docker_file: Qwen3-4B-Thinking-2507-Q4/Dockerfile
           - name: gpt-oss-20b-Q4
             irregular: 'gpt-oss-20b-Q4'
             docker_file: gpt-oss-20b-Q4/Dockerfile
