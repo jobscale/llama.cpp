@@ -1,5 +1,5 @@
-ARG URI=https://huggingface.co/unsloth/gpt-oss-20b-GGUF
-ARG FILE=gpt-oss-20b-UD-Q4_K_XL.gguf
+ARG URI=https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF
+ARG FILE=Apertus-8B-Instruct-2509-UD-Q3_K_XL.gguf
 
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
