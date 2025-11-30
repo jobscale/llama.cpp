@@ -1,4 +1,4 @@
-FROM node:lts-bookworm-slim AS build
+FROM node:lts-tixie-slim AS build
 SHELL ["bash", "-c"]
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,7 +25,7 @@ RUN cmake .. \
   -DCMAKE_BUILD_TYPE=Release \
 && cmake --build . --config Release
 
-FROM node:lts-bookworm-slim
+FROM node:lts-tixie-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
