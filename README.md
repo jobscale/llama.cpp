@@ -35,3 +35,9 @@
 2025-08-28 04:00:14 +0900 JST 3c778f4c148f 4.07GB ghcr.io/jobscale/llama.cpp:gemma-3n-E2B-Q4
 2025-08-28 04:04:32 +0900 JST 6242661ed2e5 3.17GB ghcr.io/jobscale/llama.cpp:gemma-3n-E2B-Q3
 ```
+
+```
+2026-02-23 05:49:08 +0900 JST 73b6b0f4674b 687MB ghcr.io/jobscale/llama.cpp:functiongemma-270m-Q4
+2026-09-04 01:29:06 +0900 JST f11caab44d89 3.39GB ghcr.io/jobscale/llama.cpp:gemma-4-E2B-Q4
+2026-09-04 01:31:49 +0900 JST 55e71a4a6f14 343MB ghcr.io/jobscale/llama.cpp:gemma-4-E4B-Q4
+```
