@@ -34,30 +34,12 @@ jobs:
         - name: regular
           irregular: ''
           docker_file: Dockerfile
-        - name: functiongemma-270m-Q4
-          irregular: 'functiongemma-270m-Q4'
-          docker_file: functiongemma-270m-Q4/Dockerfile
-        - name: Apertus-8B-Q3
-          irregular: 'Apertus-8B-Q3'
-          docker_file: Apertus-8B-Q3/Dockerfile
-        - name: gemma-3-12b-Q3
-          irregular: 'gemma-3-12b-Q3'
-          docker_file: gemma-3-12b-Q3/Dockerfile
-        - name: gemma-3-12b-Q2
-          irregular: 'gemma-3-12b-Q2'
-          docker_file: gemma-3-12b-Q2/Dockerfile
-        - name: gemma-3-4B-Q4
-          irregular: 'gemma-3-4B-Q4'
-          docker_file: gemma-3-4B-Q4/Dockerfile
-        - name: gemma-3-4B-Q3
-          irregular: 'gemma-3-4B-Q3'
-          docker_file: gemma-3-4B-Q3/Dockerfile
-        - name: gemma-3n-E2B-Q4
-          irregular: 'gemma-3n-E2B-Q4'
-          docker_file: gemma-3n-E2B-Q4/Dockerfile
-        - name: gemma-3n-E2B-Q3
-          irregular: 'gemma-3n-E2B-Q3'
-          docker_file: gemma-3n-E2B-Q3/Dockerfile
+        - name: gemma-4-E2B-Q4
+          irregular: 'gemma-4-E2B-Q4'
+          docker_file: gemma-4-E2B-Q4/Dockerfile
+        - name: gemma-4-E4B-Q4
+          irregular: 'gemma-4-E4B-Q4'
+          docker_file: gemma-4-E4B-Q4/Dockerfile
     permissions:
       contents: read
       packages: write

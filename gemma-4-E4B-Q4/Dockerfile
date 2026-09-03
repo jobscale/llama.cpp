@@ -1,6 +1,5 @@
-ARG URI=https://huggingface.co/unsloth/gemma-3-4b-it-GGUF
-ARG FILE=gemma-3-4b-it-UD-Q4_K_XL.gguf
-
+ARG URI=https://huggingface.co/unsloth/gemma-4-E4B-it-qat-GGUF/resolve/main/MTP
+ARG FILE=mtp-gemma-4-E4B-it-Q4_0.gguf
 FROM ghcr.io/jobscale/llama.cpp AS llama.cpp
 COPY version llama.cpp-version
 
@@ -18,7 +17,7 @@ COPY --chmod=go+rX js js
 ARG URI
 ARG FILE
 RUN curl -sSLo "${FILE}" -H "Authorization: Bearer $(node js)" \
-  "${URI}/resolve/main/${FILE}?download=true"
+  "${URI}/${FILE}?download=true"
 
 COPY --from=llama.cpp /home/node/llama.cpp/bin bin
 
